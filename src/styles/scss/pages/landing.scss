@@ -1,0 +1,62 @@
+
+@import './../../../global.scss';
+
+#landing-header {
+    min-height: 30vh;
+    width: 100hh;
+    padding: 5%;
+    text-align: center;
+    background-color: $backgroundColor;
+
+    display: block;
+    border-radius: 100% 100% 100% 100% / 0% 0% 0% 60%;
+
+    h2 {
+        color: white;
+    }
+}
+
+.btn {  
+    padding-top: 12px;
+    width: 25%;
+    margin: auto auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        width: 65%;
+    }
+}
+
+
+// Button styles here
+$buttonheight: 50px;
+.button{width:200px; height:$buttonheight; text-align:center; margin-bottom:10px; border:4px solid white; border-radius:10px; color:white; font-size:20px;
+    a{color:white; text-decoration:none; line-height:$buttonheight; width:100%; height:100%;  display:block;}
+  overflow:hidden; position:relative;
+  .first, .second{width:200px; display:inline-block; float:left;}
+}
+.nine {
+  @extend .button;
+  transition:all 0.5s;
+}
+.nine {
+   @extend .style3;
+ }
+.style3{
+  background-size:800px 200px;
+  .second{
+  a{
+    color:$backgroundColor - 44;
+    letter-spacing:2px;
+  }}
+  .elong{transition:all 0.5s;position:relative;}
+}
+.grad1, .grad2, .grad3, .grad4{background-size:300px 200px;
+  background-repeat:no-repeat;}
+
+.nine{
+  .elong{width:400px; left:0px;}
+}
+.nine:hover, nine:focus {border:4px solid $backgroundColor+50;}
+.nine:hover .elong, .nine:focus .elong{left:-200px;}
