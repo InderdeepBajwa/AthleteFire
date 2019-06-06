@@ -6,7 +6,7 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div class="center-text">
-                <h1>Welcome to Log In page!</h1>
+                <h1>Login to AthleteFire!</h1>
                 
             </div>
         )
