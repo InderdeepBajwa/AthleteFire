@@ -5,13 +5,14 @@ import 'firebase/database';
 
 // Firebase configuration (secret)
 const config = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    databaseUrl: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
-};
+    apiKey: "AIzaSyAsBEyifElIz53n6J_SgwuW4jzc6IBtwLQ",
+    authDomain: "blueathlete-d1904.firebaseapp.com",
+    databaseURL: "https://blueathlete-d1904.firebaseio.com",
+    projectId: "blueathlete-d1904",
+    storageBucket: "blueathlete-d1904.appspot.com",
+    messagingSenderId: "802929808431",
+    appId: "1:802929808431:web:bd2d81520dfd2e94"
+  };
 
 // Firebase class and methods
 class Firebase {
