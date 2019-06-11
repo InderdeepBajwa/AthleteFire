@@ -3,11 +3,16 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavigationBar from './partials/navbar';
 
+import Firebase, { FirebaseContext } from './firebase';
+
+
 function App() {
   return (
-    <Router>
-      <NavigationBar />
-    </Router>
+    <FirebaseContext.Provider value={new Firebase()}>
+      <Router>
+        <NavigationBar />
+      </Router>
+    </FirebaseContext.Provider>
   );
 }
 

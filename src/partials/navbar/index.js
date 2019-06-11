@@ -3,7 +3,7 @@ import React from 'react';
 import './../../styles/scss/partials/navbar.scss';
 import { Route, Link } from 'react-router-dom';
 import LandingPage from './../landing/index';
-import LoginPage from './../../pages/log-in/index';
+import SignInPage from './../../pages/log-in/index';
 
 class NavigationBar extends React.Component {
     render() {
@@ -21,7 +21,7 @@ class NavigationBar extends React.Component {
                 <br />
 
                 <Route exact path="/" component={LandingPage} />
-                <Route path="/login" component={LoginPage} />
+                <Route path="/login" component={SignInPage} />
             </React.Fragment>
         );
     }
