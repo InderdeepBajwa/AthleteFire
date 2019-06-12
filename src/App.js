@@ -5,13 +5,13 @@ import NavigationBar from './partials/navbar';
 
 import { withAuthentication } from './session';
 
-
-const App = () => (
+function App () {
+  return (
     <Router>
       <NavigationBar />
     </Router>
   );
-
+}
 
 export default withAuthentication(App);
 // export default App;
