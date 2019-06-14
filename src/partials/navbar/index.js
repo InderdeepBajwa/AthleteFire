@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import LandingPage from './../landing/index';
 import SignInPage from './../../pages/log-in/index';
 import Main from '../../main';
+import AddForm from '../../main/components/forms/add-form';
 
 class NavigationBar extends React.Component {
     render() {
@@ -25,6 +26,7 @@ class NavigationBar extends React.Component {
                 <Route exact path="/" component={LandingPage} />
                 <Route path="/login" component={SignInPage} />
                 <Route path="/main" component={Main} />
+                <Route path="/add-form" component={AddForm} />
             </React.Fragment>
         );
     }
