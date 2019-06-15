@@ -41,7 +41,7 @@ class SignInFormBase extends React.Component {
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
                 this.setState({ ...INITIAL_STATE});
-                this.props.history.push('/main');
+                this.props.history.push('/panel/');
             })
             .catch(error => {
                 this.setState({error});

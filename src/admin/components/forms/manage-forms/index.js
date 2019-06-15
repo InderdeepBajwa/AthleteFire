@@ -4,7 +4,9 @@ import React from 'react';
 class ManageForm extends React.Component {
     render() {
         return (
-            <h1>Manage Test</h1>
+            <React.Fragment>
+                <h2>Manage Forms</h2>
+            </React.Fragment>
         );
     }
 }

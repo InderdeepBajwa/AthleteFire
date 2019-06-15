@@ -2,7 +2,7 @@
     display: grid;
 
     grid-template:
-        "LeftBar Panel Panel";
+        "ToolBar Panel Panel";
         
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: auto 1fr auto;
