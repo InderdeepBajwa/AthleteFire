@@ -16,18 +16,45 @@
     }
 }
 
+
+// Styles for text on landing page
+
+.homepage-text {
+  padding: 40px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+// Login Button styles here (you'll realize why they're put at the bottom in a second!)
+
+
 .btn {  
     padding-top: 12px;
-    width: 25%;
+    width: 13%;
     margin: auto auto;
 }
 
-@media only screen and (max-width: 600px) {
-    .btn {
-        width: 65%;
-    }
+@media only screen and (max-width: 1200px) {
+  .btn {
+      width: 25%;
+  }
 }
 
+@media only screen and (max-width: 800px) {
+    .btn {
+        width: 50%;
+    }
+}
 
 // Button styles here
 $buttonheight: 50px;

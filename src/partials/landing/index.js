@@ -25,6 +25,11 @@ class LandingPage extends React.Component {
                         </div>
                     </div>
                 </div>
+                
+                <div className="homepage-text align-center">
+                    <h1>Welcome home Athletes!</h1>
+                    <p>AthelteFire is a powerful application that enhances your organization's abilities to boost athletic skills without having to worry about keeping information accessible.</p>
+                </div>
             </React.Fragment>
         );
     }

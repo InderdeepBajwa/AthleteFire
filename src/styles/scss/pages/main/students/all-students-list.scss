@@ -1,0 +1,28 @@
+
+.studentList {
+    border-top: 1px solid rgba(0, 0, 0, 0.171);
+    list-style-type: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    padding: 10px 0px 10px 0px;
+}
+
+.userAvatar {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 55%;
+    vertical-align: middle;
+
+}
+
+.userInformation {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+
+    padding-left: 10px;
+
+    & > span {
+        padding-left: 20px;
+        overflow: hidden;
+    }
+}

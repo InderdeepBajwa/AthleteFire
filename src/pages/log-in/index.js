@@ -17,8 +17,6 @@ const SignInPage = () => (
     </div>
 );
 
-
-
 // State: No login
 
 const INITIAL_STATE = {
@@ -47,7 +45,7 @@ class SignInFormBase extends React.Component {
                 this.setState({error});
             });
         
-            event.preventDefault();
+        event.preventDefault();
     };
 
     onChange = event => {
@@ -60,9 +58,9 @@ class SignInFormBase extends React.Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
-                <input name="password" value={password} onChange={this.onChange} type="password" placeholder="Password" />
+            <form onSubmit={this.onSubmit} className="login-form">
+                <input name="email" value={email} onChange={this.onChange} type="email" placeholder="Email Address" size="35"/>
+                <input name="password" value={password} onChange={this.onChange} type="password" placeholder="Password" size="35" />
 
                 <button disabled={isInvalid} type="submit">
                     Sign In

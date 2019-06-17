@@ -1,7 +1,7 @@
 
 import app from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/database';
+import 'firebase/firestore';
 
 // Firebase configuration (secret)
 const config = {
@@ -12,51 +12,53 @@ const config = {
     storageBucket: "blueathlete-d1904.appspot.com",
     messagingSenderId: "802929808431",
     appId: "1:802929808431:web:bd2d81520dfd2e94"
-  };
+};
 
 // Firebase class and methods
-class Firebase {
-    
+
+export default class Firebase {
+
     constructor() {
         app.initializeApp(config);
 
-        this.serverValue = app.database.serverValue;
-        this.emailAuthProvider = app.auth.emailAuthProvider;
+        // Helper function
+        this.fieldValue = app.firestore.FieldValue;
+        this.emailAuthProvider = app.auth.EmailAuthProvider;
 
-        // Firebase API
+        // Firebase APIs
         this.auth = app.auth();
-        this.db = app.database();
+        this.db = app.firestore();
     }
 
-    // Authentication API
-
-    // TODO: Sign Up, send email verification
+    // Auth API
     
-    // Sign In
-    doSignInWithEmailAndPassword = (email, password) =>
+    doCreateUserWithEmailAndPassword = (email, password) =>
+        this.auth.createUserWithEmailAndPassword(email, password);
+
+    doSignInWithEmailAndPassword = (email, password) => 
         this.auth.signInWithEmailAndPassword(email, password);
 
-    // Sign out
     doSignOut = () => this.auth.signOut();
 
-    // TODO: Password Reset
-
-    // Auth and Database listener
-
-    onAuthUserListener = (next, fall) => {
+    // Auth and DB User Listener
+    
+    onAuthUserListener = (next, fallback) => {
         this.auth.onAuthStateChanged(authUser => {
-            if (authUser) {
+            if  (authUser) {
                 this.user(authUser.uid)
-                    .once('value')
+                    .get()
                     .then(snapshot => {
-                        const dbUser = snapshot.val();
+                        const dbUser = snapshot.data()
+                        console.log("DB USER IS ", dbUser)
 
-                        // If no roles set
+                        // Default role (empty)
+
                         if (!dbUser.roles) {
                             dbUser.roles = {};
                         }
 
-                        // merge auth with db
+                        // Merge auth and DB user
+
                         authUser = {
                             uid: authUser.uid,
                             email: authUser.email,
@@ -64,19 +66,18 @@ class Firebase {
                             providerData: authUser.providerData,
                             ...dbUser,
                         };
-                        
+
                         next(authUser);
                     });
             } else {
-                fall();
+                fallback();
             }
         });
     }
 
-    // User API
-    user = uid => this.db.ref(`users/${uid}`);
-    users = () => this.db.ref('users');
+    // *** User API ***
+
+    user = uid => this.db.doc(`users/${uid}`);
+
+    users = () => this.db.collection(`users`);
 }
-
-export default Firebase;
-
